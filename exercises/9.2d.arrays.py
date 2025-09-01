@@ -162,9 +162,8 @@ def exercise7():
   # a version of the string where all vowels are removed.
   def remove_vowels(string):
     new_string = ""
-    vowels = ["a", "e", "i", "o", "u"]
     for i in string:
-      if i not in vowels:
+      if i not in vowels():
         new_string += i
     return new_string
 
@@ -195,10 +194,9 @@ def exercise9():
   def remove_first_vowel(string):
     new_string = ""
     count = 0
-    vowels = ["a", "e", "i", "o", "u"]
     for i in string:
       if count == 0:
-        if i in vowels:
+        if i in vowels():
           count += 1
           continue
       new_string += i
@@ -213,17 +211,19 @@ def exercise10():
   # should return the same sentence where words longer than 4 characters have their vowels removed.
   def shorten_long_words(string):
     array_string = string.split(" ")
-    vowels = ["a", "e", "i", "o", "u"]
     new_string = ""
     for i in range(0, len(array_string)):
       if len(array_string[i]) > 4:
         for y in range(0, len(array_string[i])):
-          if array_string[i][y] not in vowels:
+          if array_string[i][y] not in vowels():
             new_string += array_string[i][y]
         array_string[i] = new_string
       new_string = ""
 
     return " ".join(array_string)
+
+def vowels():
+  return ["a", "e", "i", "o", "u"]
 
   print(shorten_long_words("they are very noble people")) # 'they are very nbl ppl'
   print(shorten_long_words("stick with it")) # 'stck with it'
