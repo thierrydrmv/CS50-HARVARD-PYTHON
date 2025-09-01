@@ -4,7 +4,12 @@ def main():
   # exercise2()
   # exercise3()
   # exercise4()
-  exercise5()
+  # exercise5()
+  # exercise6()
+  # exercise7()
+  exercise8()
+  # exercise9()
+  # exercise10()
 
 def example():
   array = ['a', 'b'], ['c', 'd', 'e']
@@ -136,5 +141,92 @@ def exercise5():
   #   ['talk', 'normal'],
   #   ['shout', 'loud'],
   # ]
+
+def exercise6():
+  # 😭 
+  # Write a function `remove_dupes` that accepts an array as an argument. The function should return a
+  # new array where each element only appears once.
+  def remove_dupes(array):
+    new_array = []
+    for i in array:
+      if i not in new_array:
+        new_array.append(i)
+    return new_array
+      
+  print(remove_dupes(["x", "y", "y", "x", "z"])) # ['x', 'y', 'z']
+  print(remove_dupes([False, False, True, False])) # [False, True]
+  print(remove_dupes([42, 5, 7, 42, 7, 3, 7, 7])) # [42, 5, 7, 3]
+
+def exercise7():
+  # Write a function `remove_vowels` that accepts a string as an argument. The function should return
+  # a version of the string where all vowels are removed.
+  def remove_vowels(string):
+    new_string = ""
+    vowels = ["a", "e", "i", "o", "u"]
+    for i in string:
+      if i not in vowels:
+        new_string += i
+    return new_string
+
+  print(remove_vowels("jello")) # jll
+  print(remove_vowels("sensitivity")) # snstvty
+  print(remove_vowels("cellar door")) # cllr dr
+
+def exercise8():
+  # Write a function `spam` that accepts a 2D array as an argument. The array contains pairs as elements.
+  # The first element of every pair is a number and the second element is a word. The function should
+  # return a string containing the words repeated the specified number of times. See the examples.
+  def spam(array):
+    new_string = []
+
+    for i in range(0, len(array)):
+      for y in range(0, array[i][1]):
+          new_string.append(array[i][0])
+
+    return " ".join(new_string)
+
+  print(spam([["hi", 3], ["bye", 2]])) # 'hi hi hi bye bye'
+
+  print(spam([["cat", 1], ["dog", 2], ["bird", 4]])) # 'cat dog dog bird bird bird bird'
+
+def exercise9():
+  # Write a function `remove_first_vowel` that accepts a string as an argument. The function should return
+  # the string with it's first vowel removed.
+  def remove_first_vowel(string):
+    new_string = ""
+    count = 0
+    vowels = ["a", "e", "i", "o", "u"]
+    for i in string:
+      if count == 0:
+        if i in vowels:
+          count += 1
+          continue
+      new_string += i
+    return new_string
+  
+  print(remove_first_vowel("volcano")) # 'vlcano'
+  print(remove_first_vowel("celery")) # 'clery'
+  print(remove_first_vowel("juice")) # 'jice'
+
+def exercise10():
+  # Write a function `shorten_long_words` that accepts a sentence string as an argument. The function
+  # should return the same sentence where words longer than 4 characters have their vowels removed.
+  def shorten_long_words(string):
+    array_string = string.split(" ")
+    vowels = ["a", "e", "i", "o", "u"]
+    new_string = ""
+    for i in range(0, len(array_string)):
+      if len(array_string[i]) > 4:
+        for y in range(0, len(array_string[i])):
+          if array_string[i][y] not in vowels:
+            new_string += array_string[i][y]
+        array_string[i] = new_string
+      new_string = ""
+
+    return " ".join(array_string)
+
+  print(shorten_long_words("they are very noble people")) # 'they are very nbl ppl'
+  print(shorten_long_words("stick with it")) # 'stck with it'
+  print(shorten_long_words("ballerina, you must have seen her")) # 'bllrna, you must have seen her'
 
 main()
