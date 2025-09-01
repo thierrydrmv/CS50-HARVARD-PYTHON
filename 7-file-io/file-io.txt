@@ -1,0 +1,2 @@
+# input and output -> save information not only computer memory but rather transfer for
+# files in the disk
