@@ -28,7 +28,7 @@ Some of the key topics covered throughout the course include:
 To strengthen my understanding of Python syntax, I also used exercises from this **JavaScript tutorial**:  
 [Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=5qlbbpvp2Y4&t=27328s)
 
-I rewrote several of the JS examples into Python as a way to practice and memorize the language’s syntax and idioms.
+I rewrote several of the JS examples into Python as a way to practice and memorize the language’s syntax.
 
 ---
 
@@ -39,4 +39,18 @@ Clone this repository and navigate into the project:
 ```bash
 git clone https://github.com/thierrydrmv/CS50-HARVARD-PYTHON.git
 cd CS50-HARVARD-PYTHON
+```
+
+To run an exercise:
+
+```bash
+python3 6-subject/filename.py
+```
+
+🧪 Testing
+
+Some exercises include unit tests. Run them with:
+
+```bash
+pytest 6-subject/test_filename.py
 ```
