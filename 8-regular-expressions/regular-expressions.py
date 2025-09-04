@@ -13,16 +13,19 @@
 # \w word
 import re
 
+
 def main():
-  print("Regular expressions")
-  email()
+    print("Regular expressions")
+    email()
+
 
 def email():
-  email = input("What's your email? ").strip()
-  
-  if re.search(r"^(\w|\.)+@(\w+\.)?\w+\.(com|edu)$", email, re.IGNORECASE):
-    print("Valid")
-  else:
-    print("Invalid")
+    email = input("What's your email? ").strip()
+
+    if re.search(r"^(\w|\.)+@(\w+\.)?\w+\.(com|edu)$", email, re.IGNORECASE):
+        print("Valid")
+    else:
+        print("Invalid")
+
 
 main()

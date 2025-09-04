@@ -1,14 +1,18 @@
 import sys
 
-# Pillow Library 
+# Pillow Library
 from PIL import Image
 
 images = []
 
 for arg in sys.argv[1:]:
-  image = Image.open(arg)
-  images.append(image)
+    image = Image.open(arg)
+    images.append(image)
 
 images[0].save(
-  "costumes.gif", save_all=True, append_images=[images[1], images[2], images[3], images[4]], duration=200, loop=0
+    "costumes.gif",
+    save_all=True,
+    append_images=[images[1], images[2], images[3], images[4]],
+    duration=200,
+    loop=0,
 )

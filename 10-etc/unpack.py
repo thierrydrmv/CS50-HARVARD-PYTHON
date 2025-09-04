@@ -67,6 +67,7 @@ def try4():
 
     # filter_dogs()
 
+
 def try5():
     students = ["Bob", "Maria", "Jose"]
     # list comprehension
@@ -77,11 +78,13 @@ def try5():
     print(phd)
     print(phd_dict)
 
+
 def try6():
     students = ["Bob", "Maria", "Jose"]
     # enumerate
     for i, student in enumerate(students):
         print(i + 1, student)
+
 
 def try7():
     # generators
@@ -89,11 +92,13 @@ def try7():
     for i in sheep(n):
         print(i)
 
+
 def sheep(n):
     for i in range(n):
         # yield makes returns 1 row per time, memory is limited
         # return a iterator
         yield "🐑" * i
+
 
 if __name__ == "__main__":
     main()

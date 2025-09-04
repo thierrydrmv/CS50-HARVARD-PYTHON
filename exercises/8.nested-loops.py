@@ -1,202 +1,214 @@
 def main():
-  # nested()
-  # array_nested()
-  # exercise1()
-  # exercise2()
-  # exercise3()
-  # exercise4()
-  # exercise5()
-  # exercise6()
-  # exercise7()
-  exercise8()
+    # nested()
+    # array_nested()
+    # exercise1()
+    # exercise2()
+    # exercise3()
+    # exercise4()
+    # exercise5()
+    # exercise6()
+    # exercise7()
+    exercise8()
+
 
 def nested():
-  for i in range(1, 6, 1):
-    for y in range(1, 4, 1):
-      print(i, y)
+    for i in range(1, 6, 1):
+        for y in range(1, 4, 1):
+            print(i, y)
+
 
 def array_nested():
-  color = ["red", "blue", "yellow", "orange"]
-  for i in range(0, len(color)):
-    # all pairs avoiding duplicates (i + 1)
-    for y in range(i + 1, len(color)):
-      print(color[i], color[y])
+    color = ["red", "blue", "yellow", "orange"]
+    for i in range(0, len(color)):
+        # all pairs avoiding duplicates (i + 1)
+        for y in range(i + 1, len(color)):
+            print(color[i], color[y])
+
 
 def exercise1():
-  # snippet 1
-  for i in range(1, 5):
-    for j in range(1, 4):
-      print(i, j)
+    # snippet 1
+    for i in range(1, 5):
+        for j in range(1, 4):
+            print(i, j)
 
-  # 1 1
-  # 1 2
-  # 1 3
-  # 2 1
-  # 2 2
-  # 2 3
-  # 3 1
-  # 3 2
-  # 3 3
-  # 4 1
-  # 4 2
-  # 4 3
+    # 1 1
+    # 1 2
+    # 1 3
+    # 2 1
+    # 2 2
+    # 2 3
+    # 3 1
+    # 3 2
+    # 3 3
+    # 4 1
+    # 4 2
+    # 4 3
+
 
 def exercise2():
-  # snippet 2
-  for n in range(0, 2):
-    print("n=" , n)
-    for m in range(0, 5):
-      print("   m=" , m)
-    print("n=" , n)
+    # snippet 2
+    for n in range(0, 2):
+        print("n=", n)
+        for m in range(0, 5):
+            print("   m=", m)
+        print("n=", n)
 
-  # n=0
-  #    m=0
-  #    m=1
-  #    m=2
-  #    m=3
-  #    m=4
-  # n=0
-  # n=1
-  #    m=0
-  #    m=1
-  #    m=2
-  #    m=3
-  #    m=4
-  # n=1
-  
+    # n=0
+    #    m=0
+    #    m=1
+    #    m=2
+    #    m=3
+    #    m=4
+    # n=0
+    # n=1
+    #    m=0
+    #    m=1
+    #    m=2
+    #    m=3
+    #    m=4
+    # n=1
+
+
 def exercise3():
-  # snippet 3
-  friends = ["philip", "abby", "phelipe", "simcha"]
-  for i in range(0, len(friends)):
-    for j in range(0, len(friends)):
-      print(friends[i], friends[j])
+    # snippet 3
+    friends = ["philip", "abby", "phelipe", "simcha"]
+    for i in range(0, len(friends)):
+        for j in range(0, len(friends)):
+            print(friends[i], friends[j])
 
-  # philip philip
-  # philip abby
-  # philip phelipe
-  # philip simcha
-  # abby philip
-  # abby abby
-  # abby phelipe
-  # abby simcha
-  # phelipe philip
-  # phelipe abby
-  # phelipe phelipe
-  # phelipe simcha
-  # simcha philip
-  # simcha abby
-  # simcha phelipe
-  # simcha simcha
+    # philip philip
+    # philip abby
+    # philip phelipe
+    # philip simcha
+    # abby philip
+    # abby abby
+    # abby phelipe
+    # abby simcha
+    # phelipe philip
+    # phelipe abby
+    # phelipe phelipe
+    # phelipe simcha
+    # simcha philip
+    # simcha abby
+    # simcha phelipe
+    # simcha simcha
+
 
 def exercise4():
-  # snippet 4
-  locations = ["flatbush", "williamsburg", "bushwick", "greenpoint"]
-  for i in range(0, len(locations)):
-    for j in range(i + 1, len(locations)):
-      print(locations[i], locations[j])
-  
-  # flatbush williamsburg
-  # flatbush bushwick
-  # flatbush greenpoint
-  # williamsburg bushwick
-  # williamsburg greenpoint
-  # bushwick greenpoint
-  
+    # snippet 4
+    locations = ["flatbush", "williamsburg", "bushwick", "greenpoint"]
+    for i in range(0, len(locations)):
+        for j in range(i + 1, len(locations)):
+            print(locations[i], locations[j])
+
+    # flatbush williamsburg
+    # flatbush bushwick
+    # flatbush greenpoint
+    # williamsburg bushwick
+    # williamsburg greenpoint
+    # bushwick greenpoint
+
+
 def exercise5():
-  # snippet 5
-  colors = ["red", "purple", "orange"]
-  for i in range(0, len(colors)):
-    color_str = colors[i]
-    print(color_str)
-    for j in range(0, len(color_str)):
-      char = color_str[j]
-      print(char)
+    # snippet 5
+    colors = ["red", "purple", "orange"]
+    for i in range(0, len(colors)):
+        color_str = colors[i]
+        print(color_str)
+        for j in range(0, len(color_str)):
+            char = color_str[j]
+            print(char)
 
-  # red
-  # r
-  # e
-  # d
-  # purple
-  # p
-  # u
-  # r
-  # p
-  # l
-  # e
-  # orange
-  # o
-  # r
-  # a
-  # n
-  # g
-  # e
-  
+    # red
+    # r
+    # e
+    # d
+    # purple
+    # p
+    # u
+    # r
+    # p
+    # l
+    # e
+    # orange
+    # o
+    # r
+    # a
+    # n
+    # g
+    # e
+
+
 def exercise6():
-  # Write a function `pair_print` that accepts an array as an argument. The function should print
-  # all unique pairs of elements in the array. The function doesn't need to return any value. It
-  # should just print to the terminal.
+    # Write a function `pair_print` that accepts an array as an argument. The function should print
+    # all unique pairs of elements in the array. The function doesn't need to return any value. It
+    # should just print to the terminal.
 
-  def pair_print(array):
-    for i in range(0, len(array)):
-      for y in range(i + 1, len(array)):
-        print(f"{array[i]} - {array[y]}")
+    def pair_print(array):
+        for i in range(0, len(array)):
+            for y in range(i + 1, len(array)):
+                print(f"{array[i]} - {array[y]}")
 
-  pair_print(["artichoke", "broccoli", "carrot", "daikon"])
-  # prints
-  #  artichoke - broccoli
-  #  artichoke - carrot
-  #  artichoke - daikon
-  #  broccoli - carrot
-  #  broccoli - daikon
-  #  carrot - daikon
+    pair_print(["artichoke", "broccoli", "carrot", "daikon"])
+    # prints
+    #  artichoke - broccoli
+    #  artichoke - carrot
+    #  artichoke - daikon
+    #  broccoli - carrot
+    #  broccoli - daikon
+    #  carrot - daikon
 
-  pair_print(["apple", "banana", "clementine"])
-  # prints
-  #  apple - banana
-  #  apple - clementine
-  #  banana - clementine
+    pair_print(["apple", "banana", "clementine"])
+    # prints
+    #  apple - banana
+    #  apple - clementine
+    #  banana - clementine
+
 
 def exercise7():
-  # Write a function `print_combinations`that accepts two arrays as arguments. The function should
-  # print all combinations of the elements generated by taking an element from the first array and
-  # and an element from the second array. The function doesn't need to return any value. It
-  # should just print to the terminal.
-  def print_combinations(array1, array2):
-    for i in range(0, len(array1)):
-      for y in range(0, len(array2)):
-        print(array1[i], array2[y])
+    # Write a function `print_combinations`that accepts two arrays as arguments. The function should
+    # print all combinations of the elements generated by taking an element from the first array and
+    # and an element from the second array. The function doesn't need to return any value. It
+    # should just print to the terminal.
+    def print_combinations(array1, array2):
+        for i in range(0, len(array1)):
+            for y in range(0, len(array2)):
+                print(array1[i], array2[y])
 
-  colors = ["gray", "cream", "cyan"]
-  clothes = ["shirt", "flannel"]
-  print_combinations(colors, clothes)
-  # prints
-  #  gray shirt
-  #  gray flannel
-  #  cream shirt
-  #  cream flannel
-  #  cyan shirt
-  #  cyan flannel
+    colors = ["gray", "cream", "cyan"]
+    clothes = ["shirt", "flannel"]
+    print_combinations(colors, clothes)
+    # prints
+    #  gray shirt
+    #  gray flannel
+    #  cream shirt
+    #  cream flannel
+    #  cyan shirt
+    #  cyan flannel
 
-  print_combinations(["hot", "cold"], ["soup", "tea"])
-  # prints
-  #  hot soup
-  #  hot tea
-  #  cold soup
-  #  cold tea
+    print_combinations(["hot", "cold"], ["soup", "tea"])
+    # prints
+    #  hot soup
+    #  hot tea
+    #  cold soup
+    #  cold tea
+
+
 def exercise8():
-  # Write a function `two_sum(numbers, target)` that accepts an array of numbers and a target number
-  # as an argument. The function should return a boolean indicating whether or not there exists a pair
-  # of distinct elements in the array that sum to the target.
-  def two_sum(array, target):
-    for i in range(0, len(array)):
-      for y in range(i + 1, len(array)):
-        if array[i] + array[y] == target:
-          return True
-    return False
+    # Write a function `two_sum(numbers, target)` that accepts an array of numbers and a target number
+    # as an argument. The function should return a boolean indicating whether or not there exists a pair
+    # of distinct elements in the array that sum to the target.
+    def two_sum(array, target):
+        for i in range(0, len(array)):
+            for y in range(i + 1, len(array)):
+                if array[i] + array[y] == target:
+                    return True
+        return False
 
-  print(two_sum([2, 3, 5, 9], 7)) # True
-  print(two_sum([2, 3, 5, 9], 4)) # False
-  print(two_sum([6, 3, 4], 10)) # True
-  print(two_sum([6, 5, 1], 10)) # False
+    print(two_sum([2, 3, 5, 9], 7))  # True
+    print(two_sum([2, 3, 5, 9], 4))  # False
+    print(two_sum([6, 3, 4], 10))  # True
+    print(two_sum([6, 5, 1], 10))  # False
+
 
 main()
