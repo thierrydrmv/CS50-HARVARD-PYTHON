@@ -81,4 +81,5 @@ def exercise4():
     print(5 > 3 and 1 == 0)  # false
 
 
-main()
+if __name__ == "__main__":
+    main()

@@ -64,4 +64,5 @@ def exercise4():
     print(substring.index("HEY"))
 
 
-main()
+if __name__ == "__main__":
+    main()

@@ -366,4 +366,5 @@ def exercise25():
     print(contains("clock", "ok"))  # False
 
 
-main()
+if __name__ == "__main__":
+    main()

@@ -246,4 +246,5 @@ def vowels():
     return ["a", "e", "i", "o", "u"]
 
 
-main()
+if __name__ == "__main__":
+    main()

@@ -71,4 +71,5 @@ def exercise5(movie, views):
     print(f"I watched {movie} about {views} number of times.")
 
 
-main()
+if __name__ == "__main__":
+    main()

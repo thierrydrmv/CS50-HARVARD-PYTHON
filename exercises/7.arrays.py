@@ -322,4 +322,5 @@ def exercise18():
     print(common_elements(arr3, arr4))  # [4, 7]
 
 
-main()
+if __name__ == "__main__":
+    main()

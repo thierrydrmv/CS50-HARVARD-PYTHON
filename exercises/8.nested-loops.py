@@ -211,4 +211,5 @@ def exercise8():
     print(two_sum([6, 5, 1], 10))  # False
 
 
-main()
+if __name__ == "__main__":
+    main()
