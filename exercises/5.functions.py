@@ -43,21 +43,21 @@ def exercise1():
 
 
 def exercise2():
-    def howMany():
+    def how_many():
         return 42
 
-    print(howMany)  # function
-    print(howMany())  # 42
+    print(how_many)  # function
+    print(how_many())  # 42
 
-    def theAnswer():
-        howMany()
+    def the_answer():
+        how_many() # None
 
-    print(theAnswer)  # function
+    print(the_answer)  # function
 
-    def howMuch():
-        5
+    def how_much():
+        number = 5
 
-    print(howMuch())  # None
+    print(how_much())  # None
 
 
 def exercise3():
@@ -69,22 +69,21 @@ def exercise3():
     print(average(20, 26))  # calculating... # 23.0
     print(average(50, 100) + 2)  # calculating... # 77.0
 
-    a = 21 + 3
-    b = 20
-    n = average(a, b)  # calculating...
-    print(average(n, 18))  # calculating # 20.0
+    alpha = 21 + 3
+    beta = 20
+    gama = average(alpha, beta)  # calculating...
+    print(average(gama, 18))  # calculating # 20.0
 
 
 def exercise4():
     def exclaim(string):
-        capitalizing = string.upper()
-        return capitalizing + "!!"
+        return string.upper() + "!!"
 
     result = exclaim("potato")
     print(result)  # POTATO!!
     print(len(result))  # 8
     print(result[0])  # P
-    print(result[len(result) - 1])  # !
+    print(result[-1])  # !
 
 
 def exercise5():
@@ -140,7 +139,7 @@ def exercise9():
     # Write a function `ends_with_t` that accepts a string as an argument. The function should return a
     # boolean indicating whether or not the string ends with the character 't'.
     def ends_with_t(string):
-        return string[len(string) - 1] == "t"
+        return len(string) > 0 and string[-1] == "t"
 
     print(ends_with_t("smart"))  # True
     print(ends_with_t("racket"))  # True
@@ -163,7 +162,7 @@ def exercise11():
     # Write a function `starts_with_r` that accepts a string as an argument and returns a boolean indicating
     # whether or not the string starts with 'r' or 'R'.
     def starts_with_r(string):
-        return string[0] == "R" or string[0] == "r"
+        return string.lower().startswith("r")
 
     print(starts_with_r("roger that"))  # True
     print(starts_with_r("Row, row, row your boat"))  # True
@@ -203,7 +202,7 @@ def exercise14():
     # Write a function `one_or_none` that accepts two booleans as arguments. The function should return True
     # if exactly one of the arguments is True. If BOTH arguments are True, then it should return False.
     def one_or_none(bool1, bool2):
-        return bool1 != bool2 if True else False
+        return bool1 != bool2
 
     print(one_or_none(False, False))  # False
     print(one_or_none(True, False))  # True
@@ -214,8 +213,8 @@ def exercise14():
 def exercise15():
     # Write a function `ends_in_ly` that accepts a string as an argument and returns a boolean indicating
     # whether or not the string ends in the substring 'ly'.
-    def ends_in_ly(string):
-        return string[-2 : len(string)] == "ly"
+    def ends_in_ly(string: str):
+        return string.endswith("ly")
 
     print(ends_in_ly("pretty"))  # False
     print(ends_in_ly("instant"))  # False
@@ -245,9 +244,14 @@ def exercise17():
     # string 'small' if the argument is shorter than 5 characters, 'medium' if it is exactly 5 characters, and
     # 'large' if it is longer than 5 characters.
     def string_size(string):
-        return (
-            "small" if len(string) < 5 else ("medium" if len(string) == 5 else "large")
-        )
+        n = len(string)
+
+        if n < 5:
+            return "small"
+        elif n == 5:
+            return "medium"
+        else:
+            return "large"
 
     print(string_size("cat"))  # 'small'
     print(string_size("bell"))  # 'small'
@@ -265,7 +269,7 @@ def exercise18():
     # You can assume that the first argument has a length of at least three and the second argument has a
     # length of at least two.
     def wacky_word(string1, string2):
-        return string1[0:3] + string2[-2 : len(string2)]
+        return string1[:3] + string2[-2:]
 
     print(wacky_word("very", "kindly"))  # 'verly'
     print(wacky_word("forever", "sick"))  # 'forck'
@@ -277,7 +281,7 @@ def exercise19():
     # Write a function `divisible(num1, num2)` that accepts two numbers as arguments. The function should
     # return a boolean indicating whether or not `num1` is divisible by `num2`.
     def divisible(num1, num2):
-        return True if num1 % num2 == 0 else False
+        return num1 % num2 == 0
 
     print(divisible(12, 3))  # True
     print(divisible(12, 5))  # False
@@ -344,6 +348,7 @@ def exercise24():
     # larger number.
     def larger(num1, num2):
         return num1 if num1 > num2 else num2
+        # return max(num1, num2)
 
     print(larger(256, 400))  # 400
     print(larger(31, 4))  # 31
@@ -357,7 +362,7 @@ def exercise25():
     # return a boolean indicating whether or not `str2` is contained within `str1`. The function should
     # ignore any differences in capitalization.
     def contains(str1, str2):
-        return True if str2.lower() in str1.lower() else False
+        return str2.lower() in str1.lower()
 
     print(contains("caterpillar", "pill"))  # True
     print(contains("lion's share", "on"))  # True

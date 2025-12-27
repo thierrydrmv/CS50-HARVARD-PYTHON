@@ -51,7 +51,7 @@ def exercise4():
 def exercise5():
     sentence = "roger that"
 
-    if sentence[len(sentence) - 1] == "t":
+    if sentence[-1] == "t":
         print("ends in t")  # ends in t
     else:
         print("does not end in t")
@@ -75,13 +75,13 @@ def exercise6():
 
 
 def exercise7():
-    a = "celery"
-    b = "SQUASH"
+    alpha = "celery"
+    beta = "SQUASH"
 
-    if a == a.upper():
+    if alpha == alpha.upper():
         print("alpha")
 
-    if b == b.upper():
+    if beta == beta.upper():
         print("beta")  # beta
 
 
@@ -101,28 +101,28 @@ def exercise9():
         print("vroom")  # vroom
 
     if z % 3 == 0:
-        print("skrrt")  # szrrt
+        print("skrrt")  # skrrt
 
 
 def exercise10():
     nonsense = "blog trust fund tattooed williamsburg poke roof party"
-    hasOk = nonsense.index("ok") > -1
+    has_ok = "ok" in nonsense
 
-    if hasOk:
+    if has_ok:
         print("yeet")  # yeet
-    elif nonsense.length > 10:
+    elif len(nonsense) > 10:
         print("yo")
     else:
         print("no")
 
-    hasZoo = False  # nonsense.index("zoo") > -1 -> exception
-    hasFun = nonsense.index("fun") > -1
+    has_zoo = "zoo" in nonsense
+    has_fun = "fun" in nonsense
 
-    if hasZoo and hasOk:
+    if has_zoo and has_ok:
         print("cool")
-    elif hasOk:
+    elif has_ok:
         print("rad")  # rad
-    elif hasFun:
+    elif has_fun:
         print("dope")
     else:
         print("nope")
@@ -159,7 +159,7 @@ def exercise12():
     string = "AIICXAIBAAKBgQCuw0YyucjI9bf7yRhIkyg4Ru6kYU7O6fIn2JoFDzCZNkzDdsuXFGh6BXNvbu8uZUT289ERzYP1QjryMEKWzcbtsioyQApL7AgOZyFc3JJ7wvupHhIj2sqxJNtpAh7HQFG08rYh2Pb3HwOm83rbTomM6LnnjooGcoDeuWkuPqXsRlwIDAQABAoGAeQkbPBR5n9y2QLaEjcDGv7dVpFiMGHMaZZVDX34rZPy1EkZNZqlQU0jopLVvLyLESMh9A7gKhqoyMAbgZPpdb0CvniTJPpKYk24mLBeym8rBMW3XBmKk1xIOcJPGXMxeJW61jxPg6doah0aCIjf8n0Z8t8B81kLFojpECQQDzlCp0Nzka3AVZVPdBuuPg0fzeV8ugpiPEp6wQLjIMDFqYtGoAOEy4JpkmkK7zwsQsHZ8jbOtqIFdRLPrvAkEAruU321Ie1CnYCHX4Q79vLcDeWOUpdzEHp2uzDIfzP1gv7RIktGgSZWKhrnNWdeH4Y0CFb9lu6TQYJwNJvug2QJBANX0m3Uds9P9pLbQlI9WWmAtYqIZrsBElcAjOgAik0uOfawholNiw5B3ADvIYqPkLW4dGk1dO6zxW8ZF83MdMCQHGfhxLuFgsOBSfF7Bj4UX6T9FGhUGSXiqUsd06E2mMRLAjWUUUw82DLwucxMrSsV4z1aN57asC8YuQ9FkCQGirlVCt4ccXeGLCHcCsI8AYQJFRzbMs381M16jEpnaKUGrtdbMW018gWJ0EoD4tS2YZpr1hEbtiOkPJaaTKQ"
     code = "coDe"
 
-    if string.index(code):
+    if code in string:
         print("FOUND")  # FOUND
     else:
         print("NOT FOUND")

@@ -26,12 +26,19 @@ def exercise2():
     print(word[4])  # e
     print(len(word) > 5 and word[0] == "d")  # False
     print(len(word) > 5 and word[0] == "s")  # True
-    print(word.index("o") > -1)  # True
+    # print(word.index("o") > -1)  # True
     # print(word.index("z") > -1) # substringing not found
+    # more pythonic way
+    print("o" in word)
+    print("z" in word)
 
     string = "foggy"
     print(string[2 + 1])  # g
-    print(string[len(string) - 1])  # y
+
+    # print(string[len(string) - 1])  # y
+    # more pythonic way
+    print(string[-1])
+
     string = " day"
     print(string)  # " day"
     print(len(string))  # 4
@@ -41,14 +48,18 @@ def exercise2():
 def exercise3():
     phrase = "that's all folks"
     # print(phrase[len(phrase)]) # string out of range
-    print(phrase[len(phrase) - 1])  # s
-    print(phrase[len(phrase) - 2])  # k
+
+    # print(phrase[len(phrase) - 1])  # s
+    # print(phrase[len(phrase) - 2])  # k
+    # more pythonic way
+    print(phrase[-1])
+    print(phrase[-2])
 
     i = 9
     char = phrase[i]
     print(char)  # l
     print(phrase.index(char))  # 8
-    # works as slice
+    # works as slice inclusive start, exclusive end
     print(phrase[2:8])  # at's a
 
     print("abcdefg"[1:3])  # bc
@@ -61,7 +72,7 @@ def exercise3():
 def exercise4():
     hey = "HEY"
     substring = "MIICWwIBAAKBgGEdLjFEFbegPZ2AwJWkalksXr7PzWL7wIc7pOFZxXwYPWtQxvANyceCwpkqbPLsfEx7nqxAris2hYOdeN1OTFqvTyNmVuzbUPcXShn6ZoDCB30voHkeu4F3cUw5RQEUDdLscSnv4HMxHam5qgl6vXoumVNHbjyKA5UtAnfjAgMBAAECgYAmjEyvpZTxRJvwjxDi1VaZevFI0Hd4WPH9PAGgqdnH84vGXnAGFj1WikqKYcqKMQW2kdjAsWwH9D9FfrkIcDDHdZ9XuGSGkFzWtOwajWMQl7qNV1hZ288gdpIQQMOTLDgauZY6pw1cV7h4v316qJB8knQGoBNpJCfTYQJBAKV1ctsJq0Zg4QumD2hyODepP3LfLeaQsERLqVAWeuOuTY5mK5gIwsSqvcSVfY7Ze1FWIsApNFRv67azKcJPwsCQQCNlyApZFJEVNY70Er7Uu5NL9t4CYJJC9uVVkoEHEY6d7sVslqa0vP2q0zXx9YedbMBvQjxXIbY0waXUy63FvoBGJAkB3OTJWUjVgzDY1Br5wu2Yu59NjKVKLWzCsu1gaCNBfhVDX7SyIyC9EYKRfUAoQxwsmPWPyQ9QVG4WKcPZJAkBRheAotPCBE2RLHHfvpiStnMhX0UXdVyaJp5tcZ6wYV61ohyBvCOkYhUxBJzeIGrVZcvLZSLeUzXoqRPpxQxAkEAkdCZXF0gHahpZgF5y0wWcqf9ECRT1E4Hv8bk3Mf0Exp2aW34JeI6I7Xqd1NV4I9H7prQ8m3y39lFwWO8PmQ"
-    print(substring.index("HEY"))
+    print(substring.find(hey))
 
 
 if __name__ == "__main__":

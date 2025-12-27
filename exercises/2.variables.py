@@ -23,15 +23,15 @@ def exercise2():
     num = num * 2
     print(num)  # 20
 
-    bottlesOfBeer = 99
-    around = bottlesOfBeer - 1
+    bottles_of_beer = 99
+    around = bottles_of_beer - 1
     print(around)  # 98
-    print(bottlesOfBeer)  # 99
+    print(bottles_of_beer)  # 99
 
 
 def exercise3():
     apple = ""
-    print(apple)  # empty
+    print(apple)  # empty string
 
     apple = 5
     print(apple)  # 5
@@ -59,16 +59,16 @@ def exercise4():
     num += 1
     print(f"{num} is a great number")  # 42 is a great number
 
-    isNumEven = num % 2 == 0
-    print(f"{num} is even? {isNumEven}")  # 42 is even? True
+    is_num_even = num % 2 == 0
+    print(f"{num} is even? {is_num_even}")  # 42 is even? True
 
-    isQtyEven = qty % 2 == 0
-    print(f"{qty} is even? {isQtyEven}")  # 3 is even? False
+    is_qty_even = qty % 2 == 0
+    print(f"{qty} is even? {is_qty_even}")  # 3 is even? False
 
 
 def exercise5(movie, views):
-    # I watched <movie> about <views> number of times.
-    print(f"I watched {movie} about {views} number of times.")
+    # I watched <movie> around <views> times.
+    print(f"I watched {movie} around {views} times.")
 
 
 if __name__ == "__main__":

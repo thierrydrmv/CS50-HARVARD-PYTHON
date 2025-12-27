@@ -78,7 +78,7 @@ def exercise4():
     print("potato" == "potato")  # True
     print("Tomato" == "tomato")  # False
     print("42" == 42)  # False
-    print(5 > 3 and 1 == 0)  # false
+    print(5 > 3 and 1 == 0)  # False
 
 
 if __name__ == "__main__":
