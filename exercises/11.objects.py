@@ -99,8 +99,8 @@ def exercise5():
     # should return an object containing `username` and `domain` as keys. See the examples.
     # You can assume that the argument will be a valid email address.
     def email_parse(string):
-        new_string = string.split("@")
-        return {"username": new_string[0], "domain": new_string[1]}
+        user, domain = string.split("@", 1)
+        return {"username": user, "domain": domain}
 
     print(email_parse("coolcoder42@goodmail.com"))
     # { username: 'coolcoder42', domain: 'goodmail.com' }
@@ -117,10 +117,7 @@ def exercise6():
     # The function should return an array containing the values of the given key in `obj1` and `obj2`.
     # See the examples.
     def key_pair(obj1, obj2, key):
-        new_array = []
-        new_array.append(obj1[key])
-        new_array.append(obj2[key])
-        return new_array
+        return [obj1[key], obj2[key]]
 
     cat1 = {"name": "jinkee", "breed": "calico"}
     cat2 = {"name": "garfield", "breed": "red tabby"}
@@ -139,13 +136,13 @@ def exercise7():
     # appearing with the correct quantities. See the examples.
     def element_quantities(obj):
         new_array = []
-        for i in obj:
-            for _ in range(0, obj[i]):
-                new_array.append(i)
+        for element, quantity in obj.items():
+            for _ in range(0, quantity):
+                new_array.append(element)
         return new_array
 
     quantities1 = {"cat": 3, "bird": 1, "dog": 2}
-    print(element_quantities(quantities1))  # ['cat', 'cat', 'cat', 'bird, 'dog', 'dog']
+    print(element_quantities(quantities1))  # ['cat', 'cat', 'cat', 'bird', 'dog', 'dog']
 
     quantities2 = {"blue": 3, "brown": 1}
     print(element_quantities(quantities2))  # ['blue', 'blue', 'blue', 'brown']
@@ -157,9 +154,9 @@ def exercise8():
     # assume that all values are numbers and there are no ties.
     def max_object_value(obj):
         array = []
-        value = 0
+        value = obj[next(iter(obj))]
         for i in obj:
-            if value < obj[i]:
+            if value <= obj[i]:
                 value = obj[i]
                 array = [i, obj[i]]
         return array
@@ -168,6 +165,9 @@ def exercise8():
     print(
         max_object_value({"lychee": 11, "rambutan": 13, "papaya": 9})
     )  # ['rambutan', 13]
+    print(
+        max_object_value({"tomato": -1, "mustard": -4, "chicken": -22})
+    )  # ['tomato', -1]
 
 
 if __name__ == "__main__":

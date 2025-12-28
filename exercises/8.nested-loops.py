@@ -112,11 +112,11 @@ def exercise4():
 def exercise5():
     # snippet 5
     colors = ["red", "purple", "orange"]
-    for i in range(0, len(colors)):
-        color_str = colors[i]
+    for color in colors:
+        color_str = color
         print(color_str)
-        for j in range(0, len(color_str)):
-            char = color_str[j]
+        for ch in color_str:
+            char = ch
             print(char)
 
     # red
@@ -204,11 +204,20 @@ def exercise8():
                 if array[i] + array[y] == target:
                     return True
         return False
-
-    print(two_sum([2, 3, 5, 9], 7))  # True
-    print(two_sum([2, 3, 5, 9], 4))  # False
-    print(two_sum([6, 3, 4], 10))  # True
-    print(two_sum([6, 5, 1], 10))  # False
+    
+    def two_sum_faster(array, target):
+        seen = set()
+        for num in array:
+            complement = target - num
+            if complement in seen:
+                return True
+            seen.add(num)
+        return False
+    
+    print(two_sum_faster([2, 3, 5, 9], 7))  # True
+    print(two_sum_faster([2, 3, 5, 9], 4))  # False
+    print(two_sum_faster([6, 3, 4], 10))  # True
+    print(two_sum_faster([6, 5, 1], 10))  # False
 
 
 if __name__ == "__main__":

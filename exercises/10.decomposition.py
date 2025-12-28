@@ -36,7 +36,7 @@ def exercise1():
 
 def exercise2():
     def alice(n):
-        for i in range(0, n + 1, 1):
+        for i in range(0, n + 1):
             bob(i)
 
     def bob(n):
@@ -142,7 +142,7 @@ def exercise5():
 def exercise6():
     # Write a function `is_prime` that accepts a number as an argument. The function should return a
     # boolean indicating whether or not the given number is prime. A prime number is a number that is
-    # only divisible by 1 and itself. The smallest prime number is 1.
+    # only divisible by 1 and itself. The smallest prime number is 2.
     #
     # For example, 11 is a prime because it is only divisible by 1 and 11.
     # For example, 8 is not a prime because it is divisible by 1, 2, 4, and 8
@@ -161,7 +161,7 @@ def is_prime(number):
     for i in range(1, number + 1):
         if number % i == 0:
             count += 1
-    return True if count == 2 else False
+    return count == 2
 
 
 def exercise7():
@@ -192,23 +192,15 @@ def exercise8():
 
 
 def remove_last_vowel(string):
-    inverted_string = invert_string(string)
 
     new_string = ""
     counter = 0
-    for i in inverted_string:
-        if i in vowels() and counter == 0:
+    for i in range(len(string) -1, -1, -1):
+        if string[i] in vowels() and counter == 0:
             counter += 1
             continue
-        new_string += i
-    return invert_string(new_string)
-
-
-def invert_string(string):
-    new_string = ""
-    for i in range(len(string) - 1, -1, -1):
         new_string += string[i]
-    return new_string
+    return new_string[::-1]
 
 
 def exercise9():
@@ -221,6 +213,9 @@ def exercise9():
             if oah[i] == prefix:
                 new_array.append(strings[i])
         return new_array
+    
+    def pick_prefix_pythonic(strings, prefix):
+        return [s for s in strings if s.startswith(prefix)]
 
     def cut_array(strings, size):
         new_array = []
@@ -231,8 +226,8 @@ def exercise9():
     print(pick_prefix(["connect", "company", "concert", "cram"], "con"))
     # ['connect', 'concert']
 
-    print(pick_prefix(["miner", "mistake", "misspeak", "moose", "mission"], "mis"))
-    # [''mistake', 'misspeak', 'mission']
+    print(pick_prefix_pythonic(["miner", "mistake", "misspeak", "moose", "mission"], "mis"))
+    # ['mistake', 'misspeak', 'mission']
 
 
 def exercise10():
@@ -240,7 +235,7 @@ def exercise10():
     # return the sentence where the last vowel of every word is removed.
     def trendy_text(string):
         new_string_array = []
-        string_array = string.split(" ")
+        string_array = string.split()
         for i in string_array:
             new_string_array.append(remove_last_vowel(i))
         return " ".join(new_string_array)
@@ -257,9 +252,9 @@ def exercise11():
     # The function should return the word of the sentence that contains the character the most number
     # of times. You can assume that the sentence contains at least one word. If there is a tie, return
     # the word that appears earlier in the sentence.
-    def most_letter_word(sentence, string):
-        string_array = sentence.split(" ")
-        numbers_array = count_word(string_array, string)
+    def most_letter_word(sentence, word):
+        string_array = sentence.split()
+        numbers_array = count_word(string_array, word)
         bigger = 0
         for z in numbers_array:
             if z > bigger:
@@ -291,7 +286,7 @@ def exercise12():
     # return a new sentence where words longer that 3 characters are modified. Modified words should have
     # each vowel followed by 'l' and the same vowel repeated again. See the examples.
     def lala_language(sentence):
-        string_array = sentence.split(" ")
+        string_array = sentence.split()
         new_sentence_array = []
         for word in string_array:
             new_word = ""
@@ -303,7 +298,7 @@ def exercise12():
                 else:
                     new_word += word[y]
             new_sentence_array.append(new_word)
-        return new_sentence_array
+        return " ".join(new_sentence_array)
 
     print(lala_language("this is pretty strange"))  # 'thilis is preletty stralangele'
     print(
@@ -320,10 +315,10 @@ def exercise13():
     # For example, 81 is a perfect square because 9 * 9 = 81
     def pick_perfect_squares(numbers_array):
         new_array = []
-        for i in range(0, len(numbers_array)):
-            for y in range(0, numbers_array[i]):
-                if numbers_array[i] == y * y:
-                    new_array.append(numbers_array[i])
+        for i in numbers_array:
+            for y in range(1, i):
+                if i == y * y:
+                    new_array.append(i)
         return new_array
 
     print(pick_perfect_squares([6, 4, 81, 21, 36]))  # [4, 81, 36]
@@ -336,11 +331,12 @@ def exercise14():
     # of target words as arguments. The function should return a new sentence where any target words
     # have all of their characters replaced with '*'s.
     def censor_sentence(sentence, target_words):
-        sentence_array = sentence.split(" ")
+        sentence_array = sentence.split()
         new_sentence_array = []
+        targets = set(target_words)
         for i in sentence_array:
             word = i
-            for y in target_words:
+            for y in targets:
                 if i == y:
                     word = len(i) * "*"
             new_sentence_array.append(word)
@@ -354,7 +350,7 @@ def exercise14():
 
 
 def vowels():
-    return ["a", "e", "i", "o", "u"]
+    return {"a", "e", "i", "o", "u"}
 
 
 if __name__ == "__main__":

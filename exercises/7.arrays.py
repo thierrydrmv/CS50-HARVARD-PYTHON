@@ -28,11 +28,15 @@ def exercise1():
         for i in array:
             total += i
         return total
+    
+    def total_two(array):
+        return sum(array)
 
     print(total([3, 2, 8]))  # 13
     print(total([-5, 7, 4, 6]))  # 12
     print(total([7]))  # 7
     print(total([]))  # 0
+    print(total_two([3, 1]))  # 0
 
 
 def exercise2():
@@ -56,8 +60,9 @@ def exercise3():
     # a new string where all vowels are replaced with `*`s. Vowels are the letters a, e, i, o, u.
     def bleep_vowels(string):
         new_string = ""
+        vowels = ["a", "e", "i", "o", "u"]
         for i in string:
-            if i == "a" or i == "e" or i == "i" or i == "o" or i == "u":
+            if i.lower() in vowels:
                 new_string += "*"
             else:
                 new_string += i
@@ -78,11 +83,14 @@ def exercise4():
             if len(i) < 5:
                 new_array.append(i)
         return new_array
+    
+    def filter_long_words_pythonic(array):
+        return [w for w in array if len(w) < 5]
 
     print(filter_long_words(["kale", "cat", "retro", "axe", "heirloom"]))
     # ['kale', 'cat', 'axe']
 
-    print(filter_long_words(["disrupt", "pour", "trade", "pic"]))
+    print(filter_long_words_pythonic(["disrupt", "pour", "trade", "pic"]))
     # ['pour', 'pic']
 
 
@@ -91,8 +99,8 @@ def exercise5():
     # return a number representing the count of odd elements in the array.
     def num_odds(numbers_array):
         total_odds = 0
-        for i in range(0, len(numbers_array)):
-            if numbers_array[i] % 2 != 0:
+        for n in numbers_array:
+            if n % 2 != 0:
                 total_odds += 1
         return total_odds
 
@@ -109,11 +117,14 @@ def exercise6():
         for i in range(0, len(strings_array)):
             new_array.append(len(strings_array[i]))
         return new_array
+    
+    def string_to_lengths_pythonic(strings_array):
+        return [len(string) for string in strings_array]
 
     print(string_to_lengths(["belly", "echo", "irony", "pickled"]))
     # [5, 4, 5, 7]
 
-    print(string_to_lengths(["on", "off", "handmade"]))
+    print(string_to_lengths_pythonic(["on", "off", "handmade"]))
     # [2, 3, 8]
 
 
@@ -122,8 +133,8 @@ def exercise7():
     # array containing all positive numbers that can divide into the argument.
     def divisors(number):
         new_array = []
-        for i in range(number + 1):
-            if i > 0 and number % i == 0:
+        for i in range(1, number + 1):
+            if number % i == 0:
                 new_array.append(i)
         return new_array
 
@@ -136,10 +147,9 @@ def exercise8():
     # Write a function `make_acronym` that accepts a sentence string as an argument. The function should
     # return a string containing the first character of each word in the sentence.
     def make_acronym(string):
-        string_array = string.split(" ")
         new_string = ""
-        for i in string_array:
-            new_string += i[0].upper()
+        for word in string.split():
+            new_string += word[0].upper()
         return new_string
 
     print(make_acronym("New York"))  # NY
@@ -156,11 +166,18 @@ def exercise9():
         for i in range(len(array) - 1, -1, -1):
             new_array.append(array[i])
         return new_array
+    
+    def reversed_array(array):
+        new_array = []
+        for i in reversed(array):
+            new_array.append(i)
+        return new_array
 
     print(
         reverse_array(["zero", "one", "two", "three"])
     )  # ['three', 'two', 'one', 'zero']
     print(reverse_array([7, 1, 8]))  # [8, 1, 7]
+    print(reversed_array([2, 1, 3]))  # [3, 1, 2]
 
 
 def exercise10():
@@ -209,9 +226,14 @@ def exercise12():
                 max_num = i
         return max_num
 
+    def maximum_pythonic(numbers):
+        return max(numbers) if numbers else None
+
     print(maximum([5, 6, 3, 7]))  # 7
     print(maximum([17, 15, 19, 11, 2]))  # 19
     print(maximum([]))  # None
+    print(maximum_pythonic([1, 4, 3, 1]))  # 4
+    print(maximum_pythonic([]))  # None
 
 
 def exercise13():
@@ -221,15 +243,20 @@ def exercise13():
     def word_count(sentence, target_words):
         count = 0
         sentence_words = sentence.split(" ")
-        for i in range(0, len(sentence_words)):
-            for y in range(0, len(target_words)):
-                if sentence_words[i] == target_words[y]:
+        for w in sentence_words:
+            for t in target_words:
+                if w == t:
                     count += 1
         return count
+    
+    def word_count_set(sentence, target_words):
+        # set is O(1)
+        targets = set(target_words)
+        return sum(1 for w in sentence.split() if w in targets)
 
     print(word_count("open the window please", ["please", "open", "sorry"]))  # 2
     print(word_count("drive to the cinema", ["the", "driver"]))  # 1
-    print(word_count("can I have that can", ["can", "I"]))  # 3
+    print(word_count_set("can I have that can", ["can", "I"]))  # 3
 
 
 def exercise14():
@@ -255,7 +282,7 @@ def exercise15():
     # return the sentence where words alternate between lowercase and uppercase.
     def alternating_caps(string):
         string_array = string.split(" ")
-        new_string = string_array[0]
+        new_string = string_array[0].lower()
         for i in range(1, len(string_array)):
             if i % 2 == 0:
                 new_string += f" {string_array[i].lower()}"
@@ -313,13 +340,16 @@ def exercise18():
 
         return new_array
 
+    def common_elements_set(array1, array2):
+        return list(set(array1) & set(array2))
+
     arr1 = ["a", "c", "d", "b"]
     arr2 = ["b", "a", "y"]
     print(common_elements(arr1, arr2))  # ['a', 'b']
 
     arr3 = [4, 7]
     arr4 = [32, 7, 1, 4]
-    print(common_elements(arr3, arr4))  # [4, 7]
+    print(common_elements_set(arr3, arr4))  # [4, 7]
 
 
 if __name__ == "__main__":

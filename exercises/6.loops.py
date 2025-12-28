@@ -52,19 +52,19 @@ def exercise3():
 
 def exercise4():
     word = "street"
-    for i in range(len(word)):
+    for i, ch in enumerate(word):
         print(i)
-        print(word[i])
-
+        print(ch)
+    # 0 s 1 t 2 r 3 e 4 e 5 t
 
 def exercise5():
     total = 0
-    for i in range(1, 5):
+    for _ in range(1, 5):
         total += 1
         print(total)
 
     print("grand total:", total)
-
+    # grand total:4
 
 def exercise6():
     # Write a function `one_to_four` that prints all whole numbers from one to four, inclusive. The function
@@ -135,8 +135,8 @@ def exercise9():
     # each character of the string, one by one. The function doesn't need to return any value. It should
     # just print to the terminal.
     def string_iterate(string):
-        for i in range(0, len(string)):
-            print(string[i])
+        for ch in string:
+            print(ch)
 
     string_iterate("celery")
     # prints
@@ -158,9 +158,8 @@ def exercise10():
     # Write a function `evens(max)` that accepts a max number as an argument. The function should print
     # all positive even numbers that are less than the max.
     def evens(num):
-        for i in range(0, num, 2):
-            if i > 0:
-                print(i)
+        for i in range(2, num, 2):
+            print(i)
 
     evens(11)
     # prints
@@ -339,23 +338,23 @@ def exercise19():
     # the characters of the string one by one, in reverse order. The function doesn't need to return any
     # value. It should just print to the terminal.
     def reverse_iterate(string):
-        for i in range(len(string) - 1, -1, -1):
-            print(string[i], i)
+        for ch in reversed(string):
+            print(ch)
 
     reverse_iterate("carrot")
     # prints
-    #  t
-    #  o
-    #  r
-    #  r
-    #  a
-    #  c
+    #  t 5
+    #  o 4
+    #  r 3
+    #  r 2
+    #  a 1
+    #  c 0
 
     reverse_iterate("box")
     # prints
-    #  x
-    #  o
-    #  b
+    #  x 2
+    #  o 1
+    #  b 0
 
 
 def exercise20():
@@ -363,9 +362,9 @@ def exercise20():
     # new version of the string with all capital letters removed.
     def remove_capitals(string):
         new_string = ""
-        for i in string:
-            if i == i.lower():
-                new_string += i
+        for ch in string:
+            if not ch.isupper():
+                new_string += ch
 
         return new_string
 
@@ -382,14 +381,18 @@ def exercise21():
     # For example, raise_power(4, 3) should return 64 because 4 * 4 * 4 = 64
     def raise_power(base, exponent):
         total = 1
-        for i in range(1, exponent + 1):
+        for _ in range(1, exponent + 1):
             total *= base
         return total
+    
+    def raise_power_two(base, exponent):
+        return base ** exponent
 
     print(raise_power(2, 5))  # 32
     print(raise_power(4, 3))  # 64
     print(raise_power(10, 4))  # 10000
     print(raise_power(7, 2))  # 49
+    print(raise_power_two(2, 6))
 
 
 def exercise22():
@@ -419,6 +422,11 @@ def exercise23():
             if (i % 3 == 0 or i % 5 == 0) and not (i % 3 == 0 and i % 5 == 0):
                 print(i)
 
+    def fizz_buzz_xor(max):
+        for i in range(1, max + 1):
+            if (i % 3 == 0) ^ (i % 5 == 0):
+                print(i)
+
     fizz_buzz(18)
     # prints
     #  3
@@ -429,7 +437,7 @@ def exercise23():
     #  12
     #  18
 
-    fizz_buzz(33)
+    fizz_buzz_xor(33)
     # prints
     #  3
     #  5

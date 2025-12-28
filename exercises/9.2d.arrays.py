@@ -7,9 +7,9 @@ def main():
     # exercise5()
     # exercise6()
     # exercise7()
-    exercise8()
+    # exercise8()
     # exercise9()
-    # exercise10()
+    exercise10()
 
 
 def example():
@@ -24,9 +24,9 @@ def exercise1():
     # Write a function `print2d` that accepts a two-dimensional array as an argument. The function
     # should print all inner elements of the array.
     def print2d(array):
-        for i in range(0, len(array)):
-            for j in range(0, len(array[i])):
-                print(array[i][j])
+        for row in array:
+            for value in row:
+                print(value)
 
     print2d([["a", "b", "c", "d"], ["e", "f"], ["g", "h", "i"]])
     # prints
@@ -132,6 +132,9 @@ def exercise5():
             new_line.append(array2[i])
             new_array.append(new_line)
         return new_array
+    
+    def zip_native(array1, array2):
+        return [list(pair) for pair in zip(array1, array2)]
 
     print(zipper(["a", "b", "c", "d"], [-1, -2, -3, -4]))
     # [
@@ -141,7 +144,7 @@ def exercise5():
     #   ['d', -4],
     # ]
 
-    print(zipper(["whisper", "talk", "shout"], ["quiet", "normal", "loud"]))
+    print(zip_native(["whisper", "talk", "shout"], ["quiet", "normal", "loud"]))
     # [
     #   ['whisper', 'quiet'],
     #   ['talk', 'normal'],
@@ -159,10 +162,13 @@ def exercise6():
             if i not in new_array:
                 new_array.append(i)
         return new_array
+    
+    def remove_dupes_pythonic(array):
+        return list(set(array))
 
     print(remove_dupes(["x", "y", "y", "x", "z"]))  # ['x', 'y', 'z']
     print(remove_dupes([False, False, True, False]))  # [False, True]
-    print(remove_dupes([42, 5, 7, 42, 7, 3, 7, 7]))  # [42, 5, 7, 3]
+    print(remove_dupes_pythonic([42, 5, 7, 42, 7, 3, 7, 7]))  # [42, 5, 7, 3]
 
 
 def exercise7():
@@ -188,15 +194,15 @@ def exercise8():
         new_string = []
 
         for i in range(0, len(array)):
-            for y in range(0, array[i][1]):
-                new_string.append(array[i][0])
+            for _ in range(0, array[i][0]):
+                new_string.append(array[i][1])
 
         return " ".join(new_string)
 
-    print(spam([["hi", 3], ["bye", 2]]))  # 'hi hi hi bye bye'
+    print(spam([[3, "hi"], [2 ,"bye"]]))  # 'hi hi hi bye bye'
 
     print(
-        spam([["cat", 1], ["dog", 2], ["bird", 4]])
+        spam([[1, "cat"], [2, "dog"], [4, "bird"]])
     )  # 'cat dog dog bird bird bird bird'
 
 
@@ -223,7 +229,7 @@ def exercise10():
     # Write a function `shorten_long_words` that accepts a sentence string as an argument. The function
     # should return the same sentence where words longer than 4 characters have their vowels removed.
     def shorten_long_words(string):
-        array_string = string.split(" ")
+        array_string = string.split()
         new_string = ""
         for i in range(0, len(array_string)):
             if len(array_string[i]) > 4:
@@ -243,7 +249,7 @@ def exercise10():
 
 
 def vowels():
-    return ["a", "e", "i", "o", "u"]
+    return {"a", "e", "i", "o", "u"}
 
 
 if __name__ == "__main__":
